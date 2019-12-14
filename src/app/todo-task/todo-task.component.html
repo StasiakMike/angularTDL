@@ -1,0 +1,15 @@
+
+        My To Do List:
+        <ng-container *ngIf="tasksList.length > 0; else noTask">
+        <ul>
+          <li *ngFor="let task of tasksList">
+            {{ task }}
+            <button (click) = "remove(task)">Remove</button>
+            <button (click) = "done(task)">Task Done</button>
+          </li>
+        </ul>
+        </ng-container>
+        <ng-template #noTask>
+          <p>No tasks to do, have a rest! :)</p>
+        </ng-template>
+
